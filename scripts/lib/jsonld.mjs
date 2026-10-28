@@ -33,7 +33,7 @@ export function personNode(SITE_URL) {
     description:
       "Développeur iOS senior (SwiftUI, Swift 6, MVVM + Clean Architecture), fondateur du studio Prim. Ouvert à un CDI senior ou des missions.",
     url: `${SITE_URL}/a-propos`,
-    image: `${SITE_URL}/og-image.png`,
+    // Pas d'image : aucun portrait publié, et og-image.png montre le logo Prim, pas une personne.
     email: "mailto:hamdi.tlili@primapp.dev",
     address: { "@type": "PostalAddress", addressLocality: "Paris", addressCountry: "FR" },
     worksFor: { "@id": `${SITE_URL}/#prim` },
