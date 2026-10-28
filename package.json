@@ -14,7 +14,8 @@
     "verify": "node scripts/verify.mjs",
     "validate:html": "html-validate \"dist/**/*.html\"",
     "validate:a11y": "node scripts/a11y-gate.mjs",
-    "validate": "npm run build && npm run verify && npm run validate:html && npm run validate:a11y",
+    "verify:brand": "node scripts/brand/verify.mjs",
+    "validate": "npm run build && npm run verify && npm run verify:brand && npm run validate:html && npm run validate:a11y",
     "serve": "node scripts/serve-dist.mjs",
     "dev": "wrangler dev",
     "deploy:note": "echo 'Déploiement = push main (app Git-connectée primapp-portfolio). Pas de wrangler deploy manuel.'"

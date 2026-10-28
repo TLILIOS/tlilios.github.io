@@ -34,9 +34,10 @@ npm run build        # génère public/ + dist/
 
 ```bash
 npm run verify        # réciprocité hreflang, canonical, sitemap/robots, AASA content-type
+npm run verify:brand  # icônes du <head>, dimensions réelles, alpha, manifeste, JSON-LD, ids (public/)
 npm run validate:html # html-validate sur dist/ (0 erreur attendu)
 npm run validate:a11y # gate axe-core sur 16 routes (0 violation WCAG2AA)
-npm run validate      # build + les trois ci-dessus enchaînés
+npm run validate      # build + les quatre ci-dessus enchaînés
 ```
 
 Le gate a11y nécessite Google Chrome (chemin macOS par défaut, sinon `PUPPETEER_EXECUTABLE_PATH`).
@@ -72,6 +73,7 @@ npm run build                                      # puis miroir dist/ et pages
 
 - **Sources validées** (planche V1, option A) : `docs/brand/source/*.svg` — volontairement hors de `assets/`, que le build copierait dans `public/`.
 - **`generate.py`** écrit à la racine de `public/`, URL stables : `favicon.ico` (16/32/48), `favicon.svg` et `favicon-96x96.png` (variante simplifiée, lisible à 18 px dans Google), `apple-touch-icon.png` (180, opaque), `icon-192.png`, `icon-512.png`, `icon-maskable-512.png`, `prim-logo-512.png` (logo JSON-LD), `og-image.png` (1200 × 630).
+- **Contrôle** de la sortie publiée : `npm run verify:brand` (jeu exact de déclarations d'icônes sur chaque page, aucune data URI, dimensions réelles = déclarées, `.ico` 16/32/48, apple-touch et maskable sans alpha, manifeste, logo JSON-LD, ids uniques).
 - **Reconstruction** depuis la maquette (`.brand-reference/`, gitignorée, jamais publiée — elle porte des marques Apple) : `measure.py` → `construct.py` (≈ 7 min) → `sheet.py` (planche `docs/brand/previews/v1-sheet.png`).
 
 ## AASA / Universal Links
