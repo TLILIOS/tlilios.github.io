@@ -59,6 +59,21 @@ npm run dev           # wrangler dev (4.98.0 — la 4.99 a une régression dev)
 3. Une **page produit dédiée** ne naît qu'au **lancement** : créer `content/pages/<app>.json`, ajouter la route dans `content/routes.js` (FR + EN), rebuild. Avant lancement, l'app vit en section sur la home (anti-vaporware).
 4. Au lancement : renseigner `appStoreUrl` (le CTA devient un vrai lien), `appStoreId` (Smart App Banner), déposer les captures sous `public/assets/<app>/`, et le fichier AASA si universal links.
 
+## Marque (logo, favicons)
+
+Outillage Python local (`scripts/brand/`, rien au runtime du site), venv gitignoré, rendu SVG par `rsvg-convert` :
+
+```bash
+python3 -m venv .venv-brand && .venv-brand/bin/python -m pip install -r scripts/brand/requirements.txt
+brew install librsvg
+.venv-brand/bin/python scripts/brand/generate.py   # régénère les fichiers de marque de public/ (idempotent)
+npm run build                                      # puis miroir dist/ et pages
+```
+
+- **Sources validées** (planche V1, option A) : `docs/brand/source/*.svg` — volontairement hors de `assets/`, que le build copierait dans `public/`.
+- **`generate.py`** écrit à la racine de `public/`, URL stables : `favicon.ico` (16/32/48), `favicon.svg` et `favicon-96x96.png` (variante simplifiée, lisible à 18 px dans Google), `apple-touch-icon.png` (180, opaque), `icon-192.png`, `icon-512.png`, `icon-maskable-512.png`, `prim-logo-512.png` (logo JSON-LD), `og-image.png` (1200 × 630).
+- **Reconstruction** depuis la maquette (`.brand-reference/`, gitignorée, jamais publiée — elle porte des marques Apple) : `measure.py` → `construct.py` (≈ 7 min) → `sheet.py` (planche `docs/brand/previews/v1-sheet.png`).
+
 ## AASA / Universal Links
 
 Le fichier `public/.well-known/apple-app-site-association` doit être servi en `Content-Type: application/json`. Le mécanisme retenu est **`public/_headers`** (supporté nativement par Cloudflare Workers Static Assets), qui force ce content-type sur cette route. La règle est **déjà en place et préservée par le build**. ⚠ Le **fichier AASA lui-même n'existe pas encore** (FicheChef non publié) — le déposer à la publication (cf. `TODO-CONTENT.md`). Cf. `docs/adr/0001`.
