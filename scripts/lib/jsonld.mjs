@@ -10,10 +10,13 @@ export function organizationNode(SITE_URL) {
     "@type": "Organization",
     "@id": `${SITE_URL}/#prim`,
     name: "Prim",
+    // Pas de legalName : les mentions légales ne nomment que l'éditeur (TLILI HAMDI, EI), pas Prim.
+    alternateName: ["Prim Studio"],
     description:
       "Studio indépendant d'applications iOS natives premium — pour les pros et la conformité française.",
     url: `${SITE_URL}/`,
-    logo: `${SITE_URL}/og-image.png`,
+    // Tuile 512 px (option A validée), lisible sur fond blanc ; générée par scripts/brand/generate.py.
+    logo: { "@type": "ImageObject", url: `${SITE_URL}/prim-logo-512.png`, width: 512, height: 512 },
     founder: { "@id": `${SITE_URL}/#person` },
     address: { "@type": "PostalAddress", addressLocality: "Paris", addressCountry: "FR" },
   };
@@ -67,7 +70,8 @@ export function websiteNode(SITE_URL, lang) {
     "@type": "WebSite",
     "@id": `${SITE_URL}/#website`,
     url: `${SITE_URL}/`,
-    name: "Prim — applications iOS natives premium",
+    name: "Prim",
+    alternateName: ["Prim Studio"],
     description:
       lang === "en"
         ? "Prim, an independent studio building premium native iOS apps for professionals and French compliance."
