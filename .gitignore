@@ -11,3 +11,11 @@ Portfolio-main.zip
 
 # Artefacts macOS
 .DS_Store
+
+# Référence du logo (contient des marques Apple) : mesure locale uniquement,
+# jamais commitée ni publiée (brief marque §1). Hors de public/.
+.brand-reference/
+
+# venv Python de l'outillage marque (scripts/brand/requirements.txt)
+.venv-brand/
+scripts/brand/__pycache__/

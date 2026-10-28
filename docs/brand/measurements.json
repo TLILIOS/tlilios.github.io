@@ -1,0 +1,137 @@
+{
+ "reference": {
+  "file": "prim_logo.jpeg",
+  "width": 1264,
+  "height": 843
+ },
+ "rectification": {
+  "plane_side": 1800.0,
+  "frame_rms_px": {
+   "top": 0.087,
+   "right": 0.072,
+   "bottom": 0.096,
+   "left": 0.192
+  },
+  "frame_points": {
+   "top": [
+    49,
+    49
+   ],
+   "right": [
+    70,
+    70
+   ],
+   "bottom": [
+    60,
+    60
+   ],
+   "left": [
+    64,
+    70
+   ]
+  }
+ },
+ "palette": {
+  "shield_blue": {
+   "hex": "#20427c",
+   "rgb": [
+    32.1,
+    66.4,
+    123.7
+   ],
+   "luminance": 0.0566,
+   "iqr": [
+    "#0b2852",
+    "#3361a3"
+   ]
+  },
+  "gold": {
+   "hex": "#decfb5",
+   "rgb": [
+    222.2,
+    207.1,
+    181.5
+   ],
+   "luminance": 0.6349,
+   "iqr": [
+    "#bdac92",
+    "#f2e5ce"
+   ]
+  },
+  "plate": {
+   "hex": "#4f586b",
+   "rgb": [
+    79.0,
+    88.3,
+    106.6
+   ],
+   "luminance": 0.097
+  },
+  "contrast": {
+   "gold_on_blue": 6.43,
+   "blue_on_plate": 1.38,
+   "gold_on_plate": 4.66
+  }
+ },
+ "shield_thickness_raw": {
+  "P_stem_left": {
+   "median": 47.23,
+   "min": 45.45,
+   "max": 49.37,
+   "samples": 14
+  },
+  "J_side_right": {
+   "median": 55.49,
+   "min": 53.6,
+   "max": 57.43,
+   "samples": 18
+  },
+  "top_band_P": {
+   "median": 52.97,
+   "min": 50.63,
+   "max": 56.47,
+   "samples": 16
+  },
+  "top_hook_J": {
+   "median": 60.73,
+   "min": 56.92,
+   "max": 63.84,
+   "samples": 6
+  },
+  "crossbar": {
+   "median": 44.96,
+   "min": 42.58,
+   "max": 46.45,
+   "samples": 7
+  },
+  "N_left_stem": {
+   "median": 47.05,
+   "min": 43.54,
+   "max": 47.45,
+   "samples": 7
+  },
+  "bottom_band_vertical": {
+   "median": 48.23,
+   "min": 45.77,
+   "max": 52.07,
+   "samples": 5
+  },
+  "corner_radius_top_left": 28.7,
+  "corner_radius_top_right": 19.0,
+  "gap_below_crossbar": {
+   "median": 9.0,
+   "min": 8.2,
+   "max": 9.83
+  },
+  "gap_above_crossbar": {
+   "median": 0.0,
+   "min": 0.0,
+   "max": 5.98
+  }
+ },
+ "excluded": [
+  "signature (v > 1110 du plan)",
+  "saphir (GEM_BOX)",
+  "relief et dégradés de la maquette"
+ ]
+}

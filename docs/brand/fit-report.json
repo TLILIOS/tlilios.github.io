@@ -1,0 +1,216 @@
+{
+ "palette": {
+  "shield_blue": {
+   "hex": "#20427c",
+   "rgb": [
+    32.1,
+    66.4,
+    123.7
+   ],
+   "luminance": 0.0566,
+   "iqr": [
+    "#0b2852",
+    "#3361a3"
+   ]
+  },
+  "gold": {
+   "hex": "#decfb5",
+   "rgb": [
+    222.2,
+    207.1,
+    181.5
+   ],
+   "luminance": 0.6349,
+   "iqr": [
+    "#bdac92",
+    "#f2e5ce"
+   ]
+  },
+  "plate": {
+   "hex": "#4f586b",
+   "rgb": [
+    79.0,
+    88.3,
+    106.6
+   ],
+   "luminance": 0.097
+  },
+  "contrast": {
+   "gold_on_blue": 6.43,
+   "blue_on_plate": 1.38,
+   "gold_on_plate": 4.66
+  }
+ },
+ "site_light": "#eceef4",
+ "wordmark": {
+  "stats": {
+   "nodes": 44,
+   "rms": 0.764,
+   "p95": 1.706,
+   "max": 4.018,
+   "nfev": 38,
+   "status": 3,
+   "shear_deg": 1.417,
+   "iou": 0.9632,
+   "letters": {
+    "P": {
+     "iou": 0.9673,
+     "nodes": 12
+    },
+    "R": {
+     "iou": 0.9685,
+     "nodes": 15
+    },
+    "I": {
+     "iou": 0.9501,
+     "nodes": 4
+    },
+    "M": {
+     "iou": 0.9601,
+     "nodes": 13
+    }
+   }
+  },
+  "params": {
+   "yt": 965.568,
+   "yb": 1097.376,
+   "s": 34.083,
+   "sm": 30.438,
+   "h": 30.001,
+   "shear": 0.025,
+   "Px0": 676.519,
+   "Pxb": 742.712,
+   "Pxr": 790.991,
+   "Pym": 1012.297,
+   "Pyl": 1062.438,
+   "Ph1": 24.114,
+   "Ph2": 28.732,
+   "Ph3": 30.36,
+   "Ph4": 28.154,
+   "Pixb": 737.976,
+   "Pixb2": 710.602,
+   "Pixr": 754.966,
+   "Piym": 1014.55,
+   "Pih1": 1.314,
+   "Pih2": 13.238,
+   "Pih3": 9.192,
+   "Pih4": 43.396,
+   "Rx0": 830.547,
+   "Rxb": 891.918,
+   "Rxr": 943.553,
+   "Rym": 1010.377,
+   "Ryl": 1060.91,
+   "Rh1": 28.887,
+   "Rh2": 26.888,
+   "Rh3": 18.004,
+   "Rh4": 18.335,
+   "Rixb": 889.439,
+   "Rixb2": 888.971,
+   "Rixr": 908.977,
+   "Riym": 1011.199,
+   "Rih1": 9.666,
+   "Rih2": 8.535,
+   "Rih3": 21.332,
+   "Rih4": 4.354,
+   "Pxb2": 739.682,
+   "Rxj": 922.855,
+   "Ryj": 1054.972,
+   "Rh5": 17.255,
+   "Rxlr": 946.684,
+   "Rxll": 911.309,
+   "Rxjl": 885.251,
+   "Ix0": 987.953,
+   "Mx0": 1073.137,
+   "Mx3": 1219.451,
+   "Ma": 29.056,
+   "Mb": 25.453,
+   "Mxi": 1147.091,
+   "Myi": 1041.007,
+   "Myr": 1026.045,
+   "Mxo": 1145.968,
+   "Myo": 1083.345,
+   "Myl": 1033.088,
+   "Me": 7.19
+  }
+ },
+ "emblem": {
+  "stats": {
+   "nodes": 41,
+   "rms": 2.671,
+   "p95": 5.21,
+   "max": 10.559,
+   "nfev": 18,
+   "status": 3,
+   "shear_deg": 1.135,
+   "iou": 0.9185,
+   "iou_silhouette": 0.9795,
+   "paths": [
+    32,
+    9
+   ]
+  },
+  "fitted": {
+   "ax": 941.481,
+   "hw": 194.714,
+   "top": 462.854,
+   "t": 51.006,
+   "beta": 24.402,
+   "pt": 921.556,
+   "rf": 189.387,
+   "g": 9.198,
+   "gj": 22.129,
+   "ub": 1025.283,
+   "vcb": 705.023,
+   "c": 35.39,
+   "y1": 779.602,
+   "th": 35.757,
+   "shear": 0.02
+  },
+  "dims": {
+   "t": 51.01,
+   "g": 9.2,
+   "gj": 22.13,
+   "rc": 25.5,
+   "rf": 189.39,
+   "beta_deg": 24.4,
+   "theta_deg": 35.76,
+   "R1_axis": 81.43,
+   "R2_axis": 135.23,
+   "counter_left": 35.39,
+   "counter_right": 35.39,
+   "counter_top": 35.39,
+   "width": 389.43,
+   "height": 458.7
+  },
+  "rules": "coins du haut au rayon t/2 ; panse sans verticale (arcs C1 et C2 tangents au point le plus\nà droite) ; N centré sur l'axe du bouclier ; contre-formes égales `c` à gauche, à droite et\nau-dessus du N."
+ },
+ "small": {
+  "uL": 3.0,
+  "uR": 13.0,
+  "top": 2.0,
+  "pt": 14.0,
+  "t": 2.0,
+  "ub": 9.0,
+  "vcb": 8.0,
+  "R1": 2.0,
+  "R2": 2.0,
+  "rf": 5.0,
+  "gj": 1.0,
+  "beta_deg": 24.402,
+  "grid": 16
+ },
+ "tile": {
+  "side": 512,
+  "shield_height_ratio": 0.75,
+  "corner_ratio": 0.2
+ },
+ "files": {
+  "prim-wordmark.svg": 937,
+  "prim-wordmark-light.svg": 964,
+  "prim-monogram.svg": 981,
+  "prim-tile-a.svg": 1050,
+  "prim-tile-a-small.svg": 638,
+  "prim-tile-b.svg": 1050,
+  "prim-tile-b-small.svg": 638
+ }
+}

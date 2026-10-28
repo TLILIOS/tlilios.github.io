@@ -1,0 +1,9 @@
+# Outillage marque (scripts/brand/) — local uniquement, rien au runtime du site.
+# Installation :
+#   python3 -m venv .venv-brand
+#   .venv-brand/bin/python -m pip install -r scripts/brand/requirements.txt
+# Rendu SVG → PNG : rsvg-convert (librsvg, `brew install librsvg`), appelé en sous-processus.
+numpy==2.5.4
+scipy==1.18.1
+pillow==13.0.0
+scikit-image==0.26.0
