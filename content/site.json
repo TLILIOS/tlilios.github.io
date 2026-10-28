@@ -43,6 +43,7 @@
       "titleSuffix": " | Prim",
       "defaultDescription": "Prim — studio indépendant d'applications iOS natives premium. Conçues en France, accessibles et privacy-first.",
       "ogSiteName": "Prim",
+      "ogImageAlt": "Logo Prim : bouclier monogramme et mot-symbole PRIM, en or sur fond sombre",
       "themeColor": "#08090c"
     },
     "social": {
@@ -102,6 +103,7 @@
       "titleSuffix": " | Prim",
       "defaultDescription": "Prim — an independent studio building premium native iOS apps. Crafted in France, accessible and privacy-first.",
       "ogSiteName": "Prim",
+      "ogImageAlt": "Prim logo: monogram shield and PRIM wordmark in gold on a dark background",
       "themeColor": "#08090c"
     },
     "social": {

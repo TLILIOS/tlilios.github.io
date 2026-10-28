@@ -196,10 +196,10 @@ async function main() {
   if (existsSync(e404)) {
     await writeOut("404.html", await readFile(e404, "utf8"), [OUT_DIST]);
   }
-  // Binaires racine (mp4, posters, og-image, cv pdf) : mirroir public→dist pour validations.
+  // Binaires racine (mp4, posters, og-image, cv pdf, icônes, manifeste) : mirroir public→dist pour validations.
   const rootBin = await readdir(OUT_PUBLIC, { withFileTypes: true });
   for (const e of rootBin) {
-    if (e.isFile() && /\.(mp4|jpg|jpeg|png|pdf|svg|webp|ico|vtt)$/i.test(e.name)) {
+    if (e.isFile() && /\.(mp4|jpg|jpeg|png|pdf|svg|webp|ico|vtt|webmanifest)$/i.test(e.name)) {
       await mkdir(OUT_DIST, { recursive: true });
       await copyFile(join(OUT_PUBLIC, e.name), join(OUT_DIST, e.name));
       assetCount++;

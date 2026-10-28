@@ -19,6 +19,7 @@ const MIME = {
   ".mp4": "video/mp4",
   ".webp": "image/webp",
   ".ico": "image/x-icon",
+  ".webmanifest": "application/manifest+json",
   ".vtt": "text/vtt",
   ".xml": "application/xml",
   ".txt": "text/plain",

@@ -38,8 +38,6 @@ export function head({ site, config, lang, route, pageMeta, jsonldType, app }) {
   const ogLocaleAlt = lang === "fr" ? "en_US" : "fr_FR";
 
   const graph = buildGraph({ type: jsonldType, SITE_URL, lang, app });
-  const favicon =
-    "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%2308090c'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-size='60' fill='%23a0b4f5' text-anchor='middle' font-style='italic'%3EP%3C/text%3E%3C/svg%3E";
 
   return `<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -54,8 +52,12 @@ export function head({ site, config, lang, route, pageMeta, jsonldType, app }) {
 <link rel="alternate" hreflang="fr" href="${esc(frUrl)}">
 <link rel="alternate" hreflang="en" href="${esc(enUrl)}">
 <link rel="alternate" hreflang="x-default" href="${esc(xDefaultUrl)}">
-<link rel="icon" type="image/svg+xml" href="${favicon}">
-<link rel="apple-touch-icon" href="${favicon}">
+<link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-96x96.png" type="image/png" sizes="96x96">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="apple-mobile-web-app-title" content="Prim">
 <link rel="dns-prefetch" href="https://github.com">
 <meta property="og:type" content="${esc(ogType)}">
 <meta property="og:site_name" content="${esc(s.meta.ogSiteName)}">
@@ -67,7 +69,7 @@ export function head({ site, config, lang, route, pageMeta, jsonldType, app }) {
 <meta property="og:image" content="${SITE_URL}/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="${esc(s.brandSlogan)}">
+<meta property="og:image:alt" content="${esc(s.meta.ogImageAlt)}">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="${title}">
 <meta name="twitter:description" content="${description}">
