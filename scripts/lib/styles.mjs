@@ -31,7 +31,8 @@ a:focus-visible,button:focus-visible,.lang-opt:focus-visible,.btn-primary:focus-
 /* header */
 header nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.4rem 3rem;display:flex;justify-content:space-between;align-items:center;background:rgba(8,9,12,.72);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border-bottom:1px solid var(--border)}
 .nav-logo{font-family:var(--serif);font-size:1.4rem;color:var(--text-primary);text-decoration:none}
-.nav-logo span{color:var(--accent);font-style:italic}
+/* PRIM (SVG intégré) à la hauteur de capitale de Georgia : même boîte de ligne que l'ancien texte, CLS nul. */
+.wordmark{height:.6929em;width:auto;vertical-align:baseline}
 .nav-right{display:flex;align-items:center;gap:2rem}
 .nav-links{display:flex;gap:2.2rem;list-style:none}
 .nav-links a{color:var(--text-secondary);text-decoration:none;font-size:.82rem;font-weight:400;letter-spacing:.08em;text-transform:uppercase;transition:color .3s}
@@ -198,7 +199,7 @@ body.modal-open{overflow:hidden}
 /* footer */
 footer{padding:2.4rem 3rem;display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--border);flex-wrap:wrap;gap:1rem}
 .footer-brand{font-family:var(--serif);font-size:.9rem;color:var(--text-muted)}
-.footer-brand span{color:var(--text-secondary);font-style:italic}
+.footer-brand .wordmark{color:var(--text-primary)}
 .footer-copy{font-size:.75rem;color:var(--text-muted)}
 .footer-links{display:flex;gap:1.5rem}
 .footer-links a{color:var(--text-muted);text-decoration:none;font-size:.75rem;transition:color .3s}

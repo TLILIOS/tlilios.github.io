@@ -2,6 +2,7 @@
 // Toute chaîne UI vient des données (site.json / pages). a11y AA dès le commit.
 
 import { buildGraph, renderJsonLd } from "./jsonld.mjs";
+import { wordmark } from "./brand.mjs";
 
 // ---------- échappement ----------
 const ESC = { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" };
@@ -106,7 +107,7 @@ export function header({ site, lang, route }) {
     .join("\n      ");
   return `<header>
 <nav aria-label="${esc(s.nav.aria)}">
-  <a href="${homeHref}" class="nav-logo" aria-label="${esc(s.nav.logoAria)}">Pri<span>m</span></a>
+  <a href="${homeHref}" class="nav-logo" aria-label="${esc(s.nav.logoAria)}">${wordmark({ fontPx: 22.4, decorative: true })}</a>
   <div class="nav-right">
     <ul class="nav-links">
       ${items}
@@ -124,7 +125,7 @@ export function footer({ site, lang }) {
     .map((l) => `<a href="${esc(l.href)}">${esc(l.label)}</a>`)
     .join("\n    ");
   return `<footer>
-  <div class="footer-brand">Pri<span>m</span> — Craft at prime.</div>
+  <div class="footer-brand">${wordmark({ fontPx: 14.4, decorative: false })} — Craft at prime.</div>
   <nav class="footer-links" aria-label="${esc(s.footer.legalNavAria)}">
     ${links}
   </nav>
