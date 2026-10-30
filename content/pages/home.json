@@ -44,7 +44,8 @@
       "title": "Parlons de votre app<br><em>ou de votre cuisine.</em>",
       "desc": "Pour les pros, la presse ou un partenariat : écrivez-moi. Un échange de 30 minutes se réserve aussi en ligne.",
       "email": "hamdi.tlili@primapp.dev",
-      "emailAria": "Écrire un email à Prim — TLILI HAMDI"
+      "emailAria": "hamdi.tlili@primapp.dev — écrire un email à Prim, TLILI HAMDI",
+      "mailtoSubject": "Contact Prim — accueil"
     }
   },
   "en": {
@@ -92,7 +93,8 @@
       "title": "Let's talk about your app<br><em>or your kitchen.</em>",
       "desc": "For professionals, press or a partnership: write to me. A 30-minute call can also be booked online.",
       "email": "hamdi.tlili@primapp.dev",
-      "emailAria": "Send an email to Prim — TLILI HAMDI"
+      "emailAria": "hamdi.tlili@primapp.dev — send an email to Prim, TLILI HAMDI",
+      "mailtoSubject": "Prim contact — home"
     }
   }
 }
