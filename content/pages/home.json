@@ -24,7 +24,7 @@
     "methode": {
       "label": "La méthode Prim",
       "title": "Pourquoi les apps Prim sont différentes",
-      "subtitle": "Pas une liste de compétences — les choix d'ingénierie qui se voient dans chaque app du studio.",
+      "subtitle": "Pas une liste de compétences — les choix d'ingénierie qui guident chaque app du studio.",
       "cards": [
         { "title": "Natif Swift 6, sans compromis", "desc": "Concurrency stricte, architecture testable, zéro framework hybride. Le natif Apple jusqu'au bout — performances et intégration système au niveau premium." },
         { "title": "Accessibilité dès le premier commit", "desc": "VoiceOver, Dynamic Type, contraste WCAG 2.2 AA. L'accessibilité fait partie du design, pas d'un audit a posteriori." },
@@ -73,7 +73,7 @@
     "methode": {
       "label": "The Prim method",
       "title": "Why Prim apps are different",
-      "subtitle": "Not a skills list — the engineering choices visible in every app the studio ships.",
+      "subtitle": "Not a skills list — the engineering choices that guide every app the studio builds.",
       "cards": [
         { "title": "Native Swift 6, no compromise", "desc": "Strict concurrency, testable architecture, zero hybrid framework. Apple-native all the way — premium performance and system integration." },
         { "title": "Accessibility from the first commit", "desc": "VoiceOver, Dynamic Type, WCAG 2.2 AA contrast. Accessibility is part of the design, not a later audit." },

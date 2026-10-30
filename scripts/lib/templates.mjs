@@ -190,6 +190,8 @@ export function projectCard({ project: pr, i18n, lang }) {
   const trainingBadge = pr.training
     ? `<span class="project-badge">${esc(i18n.trainingBadge)}</span>`
     : "";
+  // Statut de publication, affiché quand il est connu (app à paraître…) : aucune carte ne se dit « livrée » sans preuve.
+  const statusBadge = pr.status ? `<span class="project-badge">${esc(pr.status[lang])}</span>` : "";
   const tech = pr.tech.map((t) => `<span class="tech-tag">${esc(t)}</span>`).join("");
   const links = pr.links
     .map((l) => {
@@ -215,7 +217,7 @@ export function projectCard({ project: pr, i18n, lang }) {
     <figcaption class="project-caption">${esc(caption)}</figcaption>
   </figure>
   <div class="project-info">
-    <p class="project-tag">${esc(tag)}${trainingBadge}</p>
+    <p class="project-tag">${esc(tag)}${trainingBadge}${statusBadge}</p>
     <h3 class="project-name">${esc(pr.name)}</h3>
     <p class="project-desc">${esc(desc)}</p>
     <div class="tech-tags">${tech}</div>
