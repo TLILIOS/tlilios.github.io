@@ -256,22 +256,11 @@ export function calendlySection({ site, lang, sectionLabel, sectionTitle }) {
 </div>`;
 }
 
-// ---------- script client minimal (switcher mémorisation SANS auto-redirect + Calendly lazy + skip-link focus) ----------
+// ---------- script client minimal (Calendly au clic + modale vidéo) ----------
 export const CLIENT_JS = `(function(){
   "use strict";
-  // Mémorisation du choix de langue (clé prim.lang) — AUCUN auto-redirect (piège Googlebot).
-  // On ne fait que persister le dernier clic, jamais rediriger.
-  try {
-    var path = location.pathname;
-    var isEn = path === "/en/" || path.indexOf("/en/") === 0 || path === "/en";
-    document.querySelectorAll(".lang-switch a.lang-opt").forEach(function(a){
-      a.addEventListener("click", function(){
-        try { localStorage.setItem("prim.lang", a.getAttribute("hreflang")); } catch(e){}
-      });
-    });
-    // Reflète la langue courante de la page (la page sert déjà le bon contenu).
-    try { localStorage.setItem("prim.lang", isEn ? "en" : "fr"); } catch(e){}
-  } catch(e){}
+  // Langue : aucun stockage sur le terminal (l'ancienne clé de langue n'était jamais relue).
+  // Chaque page sert déjà sa langue ; hreflang et le sélecteur suffisent.
 
   // Calendly click-to-load (RGPD : aucun cookie avant clic).
   var btn = document.getElementById("calendly-load");
