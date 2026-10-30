@@ -59,7 +59,6 @@ export function head({ site, config, lang, route, pageMeta, jsonldType, app }) {
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
 <meta name="apple-mobile-web-app-title" content="Prim">
-<link rel="dns-prefetch" href="https://github.com">
 <meta property="og:type" content="${esc(ogType)}">
 <meta property="og:site_name" content="${esc(s.meta.ogSiteName)}">
 <meta property="og:title" content="${title}">
