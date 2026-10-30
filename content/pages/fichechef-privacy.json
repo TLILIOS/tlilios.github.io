@@ -22,7 +22,7 @@
       {
         "h2": "Données collectées par l'app",
         "body": [
-          "Aucune. L'application n'utilise aucun tracker, aucun SDK analytics et aucun tiers. Aucune des données suivantes n'est collectée."
+          "Aucune. L'application n'utilise aucun tracker, aucun SDK analytics et aucun tiers."
         ]
       },
       {
@@ -87,7 +87,7 @@
       {
         "h2": "Data collected by the app",
         "body": [
-          "None. The app uses no tracker, no analytics SDK and no third party. None of the following data is collected."
+          "None. The app uses no tracker, no analytics SDK and no third party."
         ]
       },
       {

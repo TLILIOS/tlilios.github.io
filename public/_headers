@@ -7,9 +7,14 @@
   Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=()
   Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://assets.calendly.com; style-src 'self' 'unsafe-inline' https://assets.calendly.com; img-src 'self' data: https://*.calendly.com; frame-src https://calendly.com; connect-src 'self' https://calendly.com; media-src 'self'; font-src 'self' data:; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'; upgrade-insecure-requests
   Strict-Transport-Security: max-age=31536000; includeSubDomains
+  Cross-Origin-Opener-Policy: same-origin
 
 # Médias : 7 jours (non fingerprintés — renommer le fichier à chaque remplacement ;
 # passer en max-age=31536000, immutable si fingerprinting adopté)
+/demo_fichechef.mp4
+  Cache-Control: public, max-age=604800
+/poster_fichechef.jpg
+  Cache-Control: public, max-age=604800
 /demo_seniorprep.mp4
   Cache-Control: public, max-age=604800
 /demo_eventorias.mp4
@@ -28,6 +33,10 @@
   Cache-Control: public, max-age=604800
 /og-image.png
   Cache-Control: public, max-age=604800
+
+# security.txt (RFC 9116) : texte brut, à renouveler avant la date Expires.
+/.well-known/security.txt
+  Content-Type: text/plain; charset=utf-8
 
 # AASA FicheChef (Universal Links) — la règle est prête, le fichier sera ajouté
 # dans public/.well-known/ à la publication de l'app. Apple exige application/json.

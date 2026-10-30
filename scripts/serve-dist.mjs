@@ -1,5 +1,5 @@
 // scripts/serve-dist.mjs — serveur statique local pour valider dist/ (pa11y-ci).
-// Sert les URLs propres (/x → /x/index.html). Usage validation uniquement, jamais déployé.
+// Sert les URLs propres (/x → x.html, /x/ → x/index.html). Usage validation uniquement, jamais déployé.
 import http from "node:http";
 import { readFile, stat } from "node:fs/promises";
 import { join, extname, resolve } from "node:path";
@@ -28,13 +28,14 @@ const MIME = {
 const srv = http.createServer(async (req, res) => {
   const u = decodeURIComponent((req.url || "/").split("?")[0]);
   let f = join(ROOT, u);
+  // Comme Workers Static Assets (auto-trailing-slash) : /x → x.html en priorité, /x/ → x/index.html.
   try {
-    const s = await stat(f);
-    if (s.isDirectory()) f = join(f, "index.html");
+    await stat(`${f}.html`);
+    f = `${f}.html`;
   } catch {
     try {
-      await stat(join(f, "index.html"));
-      f = join(f, "index.html");
+      const s = await stat(f);
+      if (s.isDirectory()) f = join(f, "index.html");
     } catch {}
   }
   try {

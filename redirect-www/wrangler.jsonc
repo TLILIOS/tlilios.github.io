@@ -5,6 +5,7 @@
   "main": "src/index.js",
   "compatibility_date": "2026-06-10",
   "workers_dev": false,
+  "preview_urls": false,
   "routes": [
     { "pattern": "www.primapp.dev", "custom_domain": true }
   ]
