@@ -13,6 +13,9 @@
   "compatibility_date": "2026-06-10",
   // workers_dev explicite : pas d'URL *.workers.dev en doublon du domaine custom.
   "workers_dev": false,
+  // Version/Preview URLs (<version>-<nom>.<sous-domaine>.workers.dev) fermées explicitement :
+  // sans ce champ, Wrangler conserve un réglage existant éventuellement ouvert.
+  "preview_urls": false,
   "assets": {
     "directory": "./public",
     // Sert public/404.html avec un statut 404 sur toute route inconnue

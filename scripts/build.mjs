@@ -175,6 +175,8 @@ async function main() {
     const headers = await readFile(headersSrc, "utf8");
     await writeOut("_headers", headers, [OUT_DIST]); // public/_headers déjà en place, on mirroir vers dist.
   }
+  const secSrc = join(OUT_PUBLIC, ".well-known", "security.txt");
+  if (existsSync(secSrc)) await writeOut(join(".well-known", "security.txt"), await readFile(secSrc, "utf8"), [OUT_DIST]);
   const aasaSrc = join(OUT_PUBLIC, ".well-known", "apple-app-site-association");
   if (existsSync(aasaSrc)) {
     const aasa = await readFile(aasaSrc, "utf8");

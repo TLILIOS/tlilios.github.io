@@ -1,0 +1,4 @@
+Contact: mailto:support@primapp.dev
+Expires: 2027-10-30T00:00:00.000Z
+Preferred-Languages: fr, en
+Canonical: https://primapp.dev/.well-known/security.txt
