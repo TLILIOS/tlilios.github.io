@@ -72,9 +72,11 @@ export const routes = [
 ];
 
 // Mappe un chemin propre vers son fichier de sortie sous la racine du build.
-// "/" -> "index.html" ; "/fichechef" -> "fichechef/index.html" (URLs propres, html_handling auto-trailing-slash).
+// "/" -> "index.html" ; "/en/" -> "en/index.html" ; "/fichechef" -> "fichechef.html".
+// Sous html_handling auto-trailing-slash, x.html est servi en 200 à /x (l'URL canonique),
+// alors que x/index.html est servi à /x/ et fait répondre /x par une 307.
 export function outputPathFor(routePath) {
   if (routePath === "/") return "index.html";
   const clean = routePath.replace(/^\/+|\/+$/g, "");
-  return `${clean}/index.html`;
+  return routePath.endsWith("/") ? `${clean}/index.html` : `${clean}.html`;
 }

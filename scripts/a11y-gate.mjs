@@ -10,7 +10,7 @@ import http from "node:http";
 import { readFile, stat } from "node:fs/promises";
 import { join, extname, resolve } from "node:path";
 import puppeteer from "puppeteer";
-import { routes, outputPathFor } from "../content/routes.js";
+import { routes } from "../content/routes.js";
 
 const ROOT = resolve(process.cwd());
 const DIST = join(ROOT, "dist");
@@ -26,8 +26,9 @@ function serve() {
     const srv = http.createServer(async (req, r) => {
       const u = decodeURIComponent((req.url || "/").split("?")[0]);
       let f = join(DIST, u);
-      try { if ((await stat(f)).isDirectory()) f = join(f, "index.html"); }
-      catch { try { await stat(join(f, "index.html")); f = join(f, "index.html"); } catch {} }
+      // Comme Workers Static Assets (auto-trailing-slash) : /x → x.html en priorité, /x/ → x/index.html.
+      try { await stat(`${f}.html`); f = `${f}.html`; }
+      catch { try { if ((await stat(f)).isDirectory()) f = join(f, "index.html"); } catch {} }
       try { const d = await readFile(f); r.writeHead(200, { "Content-Type": MIME[extname(f)] || "application/octet-stream" }); r.end(d); }
       catch { r.writeHead(404); r.end("404"); }
     });
@@ -40,7 +41,7 @@ async function main() {
   const axeSource = await readFile(join(ROOT, "node_modules/axe-core/axe.min.js"), "utf8");
 
   const browser = await puppeteer.launch({ executablePath: CHROME, args: ["--no-sandbox", "--disable-gpu"] });
-  const urls = routes.flatMap((r) => ["fr", "en"].map((l) => "/" + outputPathFor(r[l]).replace(/index\.html$/, "")));
+  const urls = routes.flatMap((r) => ["fr", "en"].map((l) => r[l])); // URLs canoniques servies
 
   let totalViolations = 0;
   let totalIncomplete = 0;
