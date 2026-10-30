@@ -4,12 +4,12 @@
     "description": "Politique de confidentialité du site Prim de TLILI HAMDI : aucune collecte directe, prise de rendez-vous Calendly, hébergement Cloudflare et vos droits RGPD.",
     "h1": "Politique de confidentialité",
     "intro": "Responsable de traitement : <strong>TLILI HAMDI</strong> — <a href=\"mailto:hamdi.tlili@primapp.dev\">hamdi.tlili@primapp.dev</a>.",
-    "updated": "Dernière mise à jour : 30 octobre 2026.",
+    "updated": "Dernière mise à jour : 31 octobre 2026.",
     "sections": [
       {
         "h2": "Données collectées par le site",
         "body": [
-          "Le site est statique : il ne contient aucun formulaire de collecte directe, aucun traceur publicitaire ni outil d'analyse d'audience, et n'utilise pas le stockage local de votre navigateur. Cloudflare, hébergeur du site, dépose un cookie de sécurité <code>cf_clearance</code> (détection des robots, durée d'un an)."
+          "Le site est statique : il ne contient aucun formulaire de collecte directe, aucun traceur publicitaire ni outil d'analyse d'audience, et n'enregistre rien dans votre navigateur : ni cookie, ni stockage local."
         ]
       },
       {
@@ -47,12 +47,12 @@
     "description": "Privacy policy for TLILI HAMDI's Prim site: no direct collection, Calendly scheduling, Cloudflare hosting and your GDPR rights.",
     "h1": "Privacy Policy",
     "intro": "Data controller: <strong>TLILI HAMDI</strong> — <a href=\"mailto:hamdi.tlili@primapp.dev\">hamdi.tlili@primapp.dev</a>.",
-    "updated": "Last updated: October 30, 2026.",
+    "updated": "Last updated: October 31, 2026.",
     "sections": [
       {
         "h2": "Data collected by this site",
         "body": [
-          "The site is static: it contains no data collection form, no advertising tracker and no audience analytics tool, and does not use your browser's local storage. Cloudflare, the site's host, sets a security cookie, <code>cf_clearance</code> (bot detection, one-year lifetime)."
+          "The site is static: it contains no data collection form, no advertising tracker and no audience analytics tool, and stores nothing in your browser: no cookies, no local storage."
         ]
       },
       {
