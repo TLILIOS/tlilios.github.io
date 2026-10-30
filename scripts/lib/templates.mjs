@@ -75,6 +75,7 @@ export function head({ site, config, lang, route, pageMeta, jsonldType, app }) {
 <meta name="twitter:title" content="${title}">
 <meta name="twitter:description" content="${description}">
 <meta name="twitter:image" content="${SITE_URL}/og-image.png">
+<meta name="twitter:image:alt" content="${esc(s.meta.ogImageAlt)}">
 ${renderJsonLd(graph)}
 <link rel="stylesheet" href="/assets/site.css">`;
 }
