@@ -28,7 +28,7 @@
       "cards": [
         { "title": "Natif Swift 6, sans compromis", "desc": "Concurrency stricte, architecture testable, zéro framework hybride. Le natif Apple jusqu'au bout — performances et intégration système au niveau premium." },
         { "title": "Accessibilité dès le premier commit", "desc": "VoiceOver, Dynamic Type, contraste WCAG 2.2 AA. L'accessibilité fait partie du design, pas d'un audit a posteriori." },
-        { "title": "Privacy & on-device d'abord", "desc": "Les données restent sur l'appareil quand c'est possible ; pas de tracker, pas de SDK d'analyse. La vie privée est une décision d'architecture." },
+        { "title": "Vie privée et traitement sur l'appareil d'abord", "desc": "Les données restent sur l'appareil quand c'est possible ; pas de tracker, pas de SDK d'analyse. La vie privée est une décision d'architecture." },
         { "title": "Expertise réglementaire française", "desc": "Conformité fiscale, légale et métier pensée pour le marché français — pas une traduction d'une app pensée ailleurs." }
       ]
     },

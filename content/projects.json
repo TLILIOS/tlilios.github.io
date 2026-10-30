@@ -17,7 +17,7 @@
       },
       "tech": ["Swift 6", "SwiftUI", "SwiftData", "Clean Architecture", "Swift Testing", "Strict Concurrency", "A11y"],
       "links": [
-        { "href": "/fichechef", "label": { "fr": "→ En savoir plus", "en": "→ Learn more" }, "aria": { "fr": "Page produit FicheChef", "en": "FicheChef product page" } }
+        { "href": "/fichechef", "label": { "fr": "→ En savoir plus", "en": "→ Learn more" }, "aria": { "fr": "En savoir plus — page produit FicheChef", "en": "Learn more — FicheChef product page" } }
       ]
     },
     {

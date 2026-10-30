@@ -105,7 +105,7 @@ export function renderHome({ page, site, apps, lang }) {
   <p class="contact-desc">${esc(p.contact.desc)}</p>
   <div class="contact-links">
     <a class="contact-link" href="mailto:${esc(p.contact.email)}" aria-label="${esc(p.contact.emailAria)}">✉ ${esc(cta.contactEmail)}</a>
-    <a class="contact-link" href="${esc(site[lang].social.github)}" rel="noopener" aria-label="${lang === "fr" ? "Profil GitHub de Prim (nouvel onglet)" : "Prim GitHub profile (new tab)"}">GitHub ↗</a>
+    <a class="contact-link" href="${esc(site[lang].social.github)}" rel="noopener" aria-label="${lang === "fr" ? "GitHub — profil de Prim" : "GitHub — Prim's profile"}">GitHub ↗</a>
   </div>
   ${calendlySection({ site, lang })}
 </section>`;

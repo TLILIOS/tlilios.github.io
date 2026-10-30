@@ -125,7 +125,7 @@ export function footer({ site, lang }) {
     .map((l) => `<a href="${esc(l.href)}">${esc(l.label)}</a>`)
     .join("\n    ");
   return `<footer>
-  <div class="footer-brand">${wordmark({ fontPx: 14.4, decorative: false })} — Craft at prime.</div>
+  <div class="footer-brand">${wordmark({ fontPx: 14.4, decorative: false })} — ${lang === "fr" ? '<span lang="en">Craft at prime.</span>' : "Craft at prime."}</div>
   <nav class="footer-links" aria-label="${esc(s.footer.legalNavAria)}">
     ${links}
   </nav>
@@ -176,7 +176,7 @@ export function appCard({ app, site, lang }) {
     <h3 class="app-card-name">${esc(app.name)}</h3>
     ${statusBadge({ app, lang })}${flagshipMark}
   </div>
-  <p class="app-card-category">${esc(app.category)}</p>
+  <p class="app-card-category">${esc(typeof app.category === "object" ? app.category[lang] : app.category)}</p>
   <p class="app-card-tagline">${esc(tagline)}</p>
   ${detailLink}
 </article>`;
