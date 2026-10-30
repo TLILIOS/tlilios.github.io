@@ -191,10 +191,11 @@ async function main() {
   if (existsSync(SRC_ASSETS)) {
     assetCount = await copyDir(SRC_ASSETS, [join(OUT_PUBLIC, "assets"), join(OUT_DIST, "assets")]);
   }
-  // Copie 404.html vers dist (public/404.html déjà en place).
-  const e404 = join(OUT_PUBLIC, "404.html");
-  if (existsSync(e404)) {
-    await writeOut("404.html", await readFile(e404, "utf8"), [OUT_DIST]);
+  // Copie les pages 404 vers dist (public/404.html et public/en/404.html déjà en place) :
+  // not_found_handling "404-page" sert le 404.html le plus proche, donc en/404.html sous /en/.
+  for (const rel of ["404.html", join("en", "404.html")]) {
+    const e404 = join(OUT_PUBLIC, rel);
+    if (existsSync(e404)) await writeOut(rel, await readFile(e404, "utf8"), [OUT_DIST]);
   }
   // Binaires racine (mp4, posters, og-image, cv pdf, icônes, manifeste) : mirroir public→dist pour validations.
   const rootBin = await readdir(OUT_PUBLIC, { withFileTypes: true });
