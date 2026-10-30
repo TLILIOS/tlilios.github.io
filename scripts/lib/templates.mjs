@@ -274,6 +274,7 @@ export const CLIENT_JS = `(function(){
       widget.setAttribute("data-url", url);
       widget.setAttribute("role", "region");
       widget.setAttribute("aria-label", aria);
+      widget.setAttribute("tabindex", "-1"); // cible de focus : le bouton activé disparaît
       widget.style.minWidth = "320px";
       widget.style.height = "700px";
       if (wrapper && wrapper.parentNode) wrapper.parentNode.insertBefore(widget, wrapper);
@@ -284,6 +285,7 @@ export const CLIENT_JS = `(function(){
       sc.src = "https://assets.calendly.com/assets/external/widget.js"; sc.async = true;
       document.head.appendChild(sc);
       btn.hidden = true; if (wrapper) wrapper.hidden = true;
+      widget.focus(); // WCAG 2.4.3 : le focus ne retombe pas sur <body>
     }, { once: true });
   }
 
