@@ -59,7 +59,6 @@ export function head({ site, config, lang, route, pageMeta, jsonldType, app }) {
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
 <meta name="apple-mobile-web-app-title" content="Prim">
-<link rel="dns-prefetch" href="https://github.com">
 <meta property="og:type" content="${esc(ogType)}">
 <meta property="og:site_name" content="${esc(s.meta.ogSiteName)}">
 <meta property="og:title" content="${title}">
@@ -75,6 +74,7 @@ export function head({ site, config, lang, route, pageMeta, jsonldType, app }) {
 <meta name="twitter:title" content="${title}">
 <meta name="twitter:description" content="${description}">
 <meta name="twitter:image" content="${SITE_URL}/og-image.png">
+<meta name="twitter:image:alt" content="${esc(s.meta.ogImageAlt)}">
 ${renderJsonLd(graph)}
 <link rel="stylesheet" href="/assets/site.css">`;
 }
@@ -125,7 +125,7 @@ export function footer({ site, lang }) {
     .map((l) => `<a href="${esc(l.href)}">${esc(l.label)}</a>`)
     .join("\n    ");
   return `<footer>
-  <div class="footer-brand">${wordmark({ fontPx: 14.4, decorative: false })} — Craft at prime.</div>
+  <div class="footer-brand">${wordmark({ fontPx: 14.4, decorative: false })} — ${lang === "fr" ? '<span lang="en">Craft at prime.</span>' : "Craft at prime."}</div>
   <nav class="footer-links" aria-label="${esc(s.footer.legalNavAria)}">
     ${links}
   </nav>
@@ -176,7 +176,7 @@ export function appCard({ app, site, lang }) {
     <h3 class="app-card-name">${esc(app.name)}</h3>
     ${statusBadge({ app, lang })}${flagshipMark}
   </div>
-  <p class="app-card-category">${esc(app.category)}</p>
+  <p class="app-card-category">${esc(typeof app.category === "object" ? app.category[lang] : app.category)}</p>
   <p class="app-card-tagline">${esc(tagline)}</p>
   ${detailLink}
 </article>`;
@@ -190,6 +190,8 @@ export function projectCard({ project: pr, i18n, lang }) {
   const trainingBadge = pr.training
     ? `<span class="project-badge">${esc(i18n.trainingBadge)}</span>`
     : "";
+  // Statut de publication, affiché quand il est connu (app à paraître…) : aucune carte ne se dit « livrée » sans preuve.
+  const statusBadge = pr.status ? `<span class="project-badge">${esc(pr.status[lang])}</span>` : "";
   const tech = pr.tech.map((t) => `<span class="tech-tag">${esc(t)}</span>`).join("");
   const links = pr.links
     .map((l) => {
@@ -215,7 +217,7 @@ export function projectCard({ project: pr, i18n, lang }) {
     <figcaption class="project-caption">${esc(caption)}</figcaption>
   </figure>
   <div class="project-info">
-    <p class="project-tag">${esc(tag)}${trainingBadge}</p>
+    <p class="project-tag">${esc(tag)}${trainingBadge}${statusBadge}</p>
     <h3 class="project-name">${esc(pr.name)}</h3>
     <p class="project-desc">${esc(desc)}</p>
     <div class="tech-tags">${tech}</div>
@@ -256,22 +258,11 @@ export function calendlySection({ site, lang, sectionLabel, sectionTitle }) {
 </div>`;
 }
 
-// ---------- script client minimal (switcher mémorisation SANS auto-redirect + Calendly lazy + skip-link focus) ----------
+// ---------- script client minimal (Calendly au clic + modale vidéo) ----------
 export const CLIENT_JS = `(function(){
   "use strict";
-  // Mémorisation du choix de langue (clé prim.lang) — AUCUN auto-redirect (piège Googlebot).
-  // On ne fait que persister le dernier clic, jamais rediriger.
-  try {
-    var path = location.pathname;
-    var isEn = path === "/en/" || path.indexOf("/en/") === 0 || path === "/en";
-    document.querySelectorAll(".lang-switch a.lang-opt").forEach(function(a){
-      a.addEventListener("click", function(){
-        try { localStorage.setItem("prim.lang", a.getAttribute("hreflang")); } catch(e){}
-      });
-    });
-    // Reflète la langue courante de la page (la page sert déjà le bon contenu).
-    try { localStorage.setItem("prim.lang", isEn ? "en" : "fr"); } catch(e){}
-  } catch(e){}
+  // Langue : aucun stockage sur le terminal (l'ancienne clé de langue n'était jamais relue).
+  // Chaque page sert déjà sa langue ; hreflang et le sélecteur suffisent.
 
   // Calendly click-to-load (RGPD : aucun cookie avant clic).
   var btn = document.getElementById("calendly-load");
@@ -285,6 +276,7 @@ export const CLIENT_JS = `(function(){
       widget.setAttribute("data-url", url);
       widget.setAttribute("role", "region");
       widget.setAttribute("aria-label", aria);
+      widget.setAttribute("tabindex", "-1"); // cible de focus : le bouton activé disparaît
       widget.style.minWidth = "320px";
       widget.style.height = "700px";
       if (wrapper && wrapper.parentNode) wrapper.parentNode.insertBefore(widget, wrapper);
@@ -295,6 +287,7 @@ export const CLIENT_JS = `(function(){
       sc.src = "https://assets.calendly.com/assets/external/widget.js"; sc.async = true;
       document.head.appendChild(sc);
       btn.hidden = true; if (wrapper) wrapper.hidden = true;
+      widget.focus(); // WCAG 2.4.3 : le focus ne retombe pas sur <body>
     }, { once: true });
   }
 

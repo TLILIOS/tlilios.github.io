@@ -141,7 +141,7 @@ async function main() {
     const dup = ids.filter((id, i) => ids.indexOf(id) !== i);
     check(dup.length === 0, `${rel} : id dupliqués ${[...new Set(dup)]}`);
     check(!/PrimApp/.test(html), `${rel} : « PrimApp » présent`);
-    if (rel === "404.html") continue;                     // page statique noindex, hors gabarit
+    if (/^(en\/)?404\.html$/.test(rel)) continue;         // pages 404 statiques noindex (FR et /en/), hors gabarit
     check(/<meta name="google-site-verification" content="[^"]+">/.test(head), `${rel} : google-site-verification absent`);
     const ogImg = head.match(/<meta property="og:image" content="([^"]+)">/);
     const ogW = head.match(/<meta property="og:image:width" content="(\d+)">/);

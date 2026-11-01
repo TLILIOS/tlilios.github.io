@@ -1,9 +1,9 @@
 {
   "fr": {
     "title": "Support — Prim | Tlili Hamdi",
-    "description": "Support des applications éditées par Prim (TLILI HAMDI) sur l'App Store et des demandes concernant ce site.",
+    "description": "Support des applications de Prim (FicheChef, à paraître sur l'App Store) et des demandes concernant ce site.",
     "h1": "Support",
-    "intro": "Cette page centralise le support des applications éditées par Prim (TLILI HAMDI) sur l'App Store, ainsi que les demandes concernant ce site.",
+    "intro": "Cette page centralise le support des applications de Prim (FicheChef, à paraître sur l'App Store), ainsi que les demandes concernant ce site.",
     "updated": "Dernière mise à jour : 10 juin 2026.",
     "sections": [
       {
@@ -21,7 +21,7 @@
       {
         "h2": "Confidentialité des applications",
         "body": [
-          "Les traitements sont réalisés localement. Le détail figure sur chaque fiche App Store ainsi que dans la <a href=\"/confidentialite\">politique de confidentialité</a>."
+          "Les traitements sont réalisés localement. Le détail figurera sur la fiche App Store de chaque application, à sa publication, ainsi que dans la <a href=\"/confidentialite\">politique de confidentialité</a>."
         ]
       }
     ],
@@ -33,9 +33,9 @@
   },
   "en": {
     "title": "Support — Prim | Tlili Hamdi",
-    "description": "Support for applications published by Prim (TLILI HAMDI) on the App Store and for requests about this site.",
+    "description": "Support for Prim's apps (FicheChef, coming to the App Store) and for requests about this site.",
     "h1": "Support",
-    "intro": "This page centralizes support for applications published by Prim (TLILI HAMDI) on the App Store, as well as requests about this site.",
+    "intro": "This page centralizes support for Prim's apps (FicheChef, coming to the App Store), as well as requests about this site.",
     "updated": "Last updated: June 10, 2026.",
     "sections": [
       {
@@ -53,7 +53,7 @@
       {
         "h2": "App privacy",
         "body": [
-          "Processing is performed locally. Details are provided on each App Store listing as well as in the <a href=\"/en/privacy\">privacy policy</a>."
+          "Processing is performed locally. Details will be provided on each app's App Store listing upon release, as well as in the <a href=\"/en/privacy\">privacy policy</a>."
         ]
       }
     ],

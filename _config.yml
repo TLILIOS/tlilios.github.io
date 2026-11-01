@@ -1,0 +1,19 @@
+# GitHub Pages (tlilios.github.io) : ne publier que la page de déménagement (index.html, noindex + canonical
+# vers primapp.dev) et 404.html. Sans cette liste, Jekyll publie tout le dépôt : copie indexable du site
+# sous /public/, CV, contenus JSON et documents internes (docs/, TODO-CONTENT, MIGRATION_PRIMAPP).
+exclude:
+  - public
+  - dist
+  - content
+  - scripts
+  - docs
+  - redirect-www
+  - assets
+  - Portfolio-main
+  - Portfolio-main.zip
+  - node_modules
+  - package.json
+  - package-lock.json
+  - wrangler.jsonc
+  - "*.md"
+  - .pa11yci

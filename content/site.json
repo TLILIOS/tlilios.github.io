@@ -18,8 +18,8 @@
       "aria": "Langue : choisir français ou anglais",
       "fr": "FR",
       "en": "EN",
-      "toFrAria": "Voir cette page en français",
-      "toEnAria": "View this page in English"
+      "toFrAria": "FR — version française de cette page",
+      "toEnAria": "EN — English version of this page"
     },
     "footer": {
       "legalNavAria": "Pages légales",
@@ -78,8 +78,8 @@
       "aria": "Language: choose French or English",
       "fr": "FR",
       "en": "EN",
-      "toFrAria": "Voir cette page en français",
-      "toEnAria": "View this page in English"
+      "toFrAria": "FR — version française de cette page",
+      "toEnAria": "EN — English version of this page"
     },
     "footer": {
       "legalNavAria": "Legal pages",

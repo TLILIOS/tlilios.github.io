@@ -1,5 +1,5 @@
 {
-  "_note": "Démos portfolio du fondateur (preuve de craft), affichées sur /a-propos dans une SECTION UNIQUE « Applications livrées » (T1 fusion). group: production pour tous. training:true = badge honnête « Projet de formation » conservé. Démos = screencasts muets sans audio : légende visible figcaption seulement, aucun sous-titre/track requis.",
+  "_note": "Démos portfolio du fondateur (preuve de craft), affichées sur /a-propos dans une SECTION UNIQUE « Réalisations et démonstrations » (T1 fusion). group: production pour tous. training:true = badge honnête « Projet de formation » conservé ; status = statut de publication affiché quand il est connu. Démos = screencasts muets sans audio : légende visible figcaption seulement, aucun sous-titre/track requis.",
   "projects": [
     {
       "id": "fichechef",
@@ -10,6 +10,7 @@
       "video": "/demo_fichechef.mp4",
       "poster": "/poster_fichechef.jpg",
       "training": false,
+      "status": { "fr": "À paraître sur l'App Store", "en": "Coming to the App Store" },
       "tag": { "fr": "Food · Coût matière", "en": "Food · Cost management" },
       "desc": {
         "fr": "Application iOS native pour les cuisines professionnelles : fiches techniques, calcul du coût matière et des marges recalculés en direct, détection des 14 allergènes INCO et export PDF. Offline d'abord, sans tracker, tout reste sur l'appareil.",
@@ -17,7 +18,7 @@
       },
       "tech": ["Swift 6", "SwiftUI", "SwiftData", "Clean Architecture", "Swift Testing", "Strict Concurrency", "A11y"],
       "links": [
-        { "href": "/fichechef", "label": { "fr": "→ En savoir plus", "en": "→ Learn more" }, "aria": { "fr": "Page produit FicheChef", "en": "FicheChef product page" } }
+        { "href": "/fichechef", "label": { "fr": "→ En savoir plus", "en": "→ Learn more" }, "aria": { "fr": "En savoir plus — page produit FicheChef", "en": "Learn more — FicheChef product page" } }
       ]
     },
     {
@@ -100,8 +101,8 @@
   ],
   "i18n": {
     "fr": {
-      "productionLabel": "Applications livrées",
-      "productionSubtitle": "Applications iOS natives conçues et développées de bout en bout — architecture, UI, tests et contenu. Certaines ont servi de terrain d'apprentissage des fondamentaux.",
+      "productionLabel": "Réalisations et démonstrations",
+      "productionSubtitle": "Applications iOS natives conçues et développées de bout en bout (architecture, UI, tests et contenu), dont des projets de formation, signalés par un badge.",
       "trainingBadge": "Projet de formation",
       "zoomAria": "Agrandir la démonstration vidéo de",
       "modalClose": "Fermer la démonstration",
@@ -110,8 +111,8 @@
       "captionPrefix": "Démonstration vidéo muette de"
     },
     "en": {
-      "productionLabel": "Shipped applications",
-      "productionSubtitle": "Native iOS apps designed and built end to end — architecture, UI, tests and content. Some doubled as a learning ground for the fundamentals.",
+      "productionLabel": "Selected work and demos",
+      "productionSubtitle": "Native iOS apps designed and built end to end (architecture, UI, tests and content), including training projects, marked with a badge.",
       "trainingBadge": "Training project",
       "zoomAria": "Enlarge the video demo of",
       "modalClose": "Close the demo",

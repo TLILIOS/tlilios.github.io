@@ -10,7 +10,7 @@
       "showOnHome": true,
       "status": "coming-soon",
       "name": "FicheChef",
-      "category": "Food & cost management",
+      "category": { "fr": "Coût matière & fiches techniques", "en": "Food & cost management" },
       "applicationCategory": "BusinessApplication",
       "operatingSystem": "iOS",
       "tagline": {

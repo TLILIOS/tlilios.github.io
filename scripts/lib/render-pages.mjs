@@ -104,8 +104,8 @@ export function renderHome({ page, site, apps, lang }) {
   <h2 class="section-title" id="contact-h2">${raw(p.contact.title)}</h2>
   <p class="contact-desc">${esc(p.contact.desc)}</p>
   <div class="contact-links">
-    <a class="contact-link" href="mailto:${esc(p.contact.email)}" aria-label="${esc(p.contact.emailAria)}">✉ ${esc(cta.contactEmail)}</a>
-    <a class="contact-link" href="${esc(site[lang].social.github)}" rel="noopener" aria-label="${lang === "fr" ? "Profil GitHub de Prim (nouvel onglet)" : "Prim GitHub profile (new tab)"}">GitHub ↗</a>
+    <a class="contact-link" href="mailto:${esc(p.contact.email)}?subject=${encodeURIComponent(p.contact.mailtoSubject)}" aria-label="${esc(p.contact.emailAria)}">✉ ${esc(p.contact.email)}</a>
+    <a class="contact-link" href="${esc(site[lang].social.github)}" rel="noopener" aria-label="${lang === "fr" ? "GitHub — profil de Prim" : "GitHub — Prim's profile"}">GitHub ↗</a>
   </div>
   ${calendlySection({ site, lang })}
 </section>`;
@@ -223,7 +223,7 @@ export function renderAbout({ page, site, lang, projectsDoc }) {
     <p class="availability">${esc(c.availability)}</p>
     <p class="pitch">${esc(c.pitch)}</p>
     <div class="collaborate-cta">
-      <a class="btn-primary" href="mailto:${esc(c.ctaPrimaryEmail)}" aria-label="${esc(c.ctaPrimaryEmailAria)}">✉ ${esc(cta.contactEmail)}</a>
+      <a class="btn-primary" href="mailto:${esc(c.ctaPrimaryEmail)}?subject=${encodeURIComponent(c.ctaPrimaryEmailSubject)}" aria-label="${esc(c.ctaPrimaryEmailAria)}">✉ ${esc(c.ctaPrimaryEmail)}</a>
       <a class="btn-primary" href="${esc(c.ctaCvHref)}" target="_blank" rel="noopener" aria-label="${esc(c.ctaCvAria)}">${esc(cta.viewCv)} ↗</a>
     </div>
     <div class="calendly-block">
